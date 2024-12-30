@@ -1,0 +1,22 @@
+﻿@model mola.Models.Etkinlik
+
+@{
+    Layout = "_LayoutPanel";
+}
+
+<h2>Etkinlik Ekle</h2>
+
+<form class=" d-grid gap-3" asp-action="EtkinlikEkle" method="post">
+    <select class="form-select" asp-for="Kategori">
+        <option value="bos" selected>Kategori Seçiniz</option>
+        <option value="Yetiskin">Yetiskin</option>
+        <option value="Genc">Genc</option>
+        <option value="Cocuk">Cocuk</option>
+        <option value="Aile">Aile</option>
+    </select>
+    <input class="form-control" asp-for="Baslik" type="text" placeholder="Baslik" />
+    <input class="form-control" asp-for="Text1" type="text" placeholder="Text1" />
+    <input class="form-control" asp-for="Text2" type="text" placeholder="Text2" />
+    <input class="form-control" asp-for="AnaResimUrl" type="text" placeholder="AnaResimUrl" />
+    <button class="btn btn-primary">Ekle</button>
+</form>

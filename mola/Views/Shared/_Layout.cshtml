@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MolaIstanbul</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/mola.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
+</head>
+<body id="google_translate_element">
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-md">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="~/images/logolight.svg" alt="Logo" class="img-fluid" />
+                </a>
+                <!-- Hamburger Button Only for Small Devices (md and below) -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Offcanvas Sidebar -->
+                <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item dropdown ms-4">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Eğlence
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item text-custom" asp-controller="Etkinlik" asp-action="Index">Aktiviteler</a></li>
+                                    <li><a class="dropdown-item text-custom" href="#">Aktibite Alanları</a></li>
+                                    <li><a class="dropdown-item text-custom" href="#">Kadın Kadına Eğlence</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item ms-4">
+                                <a class="nav-link active" asp-controller="Restoran" asp-action="Index">Lezzet</a>
+                            </li>
+                            <li class="nav-item ms-4">
+                                <a class="nav-link" asp-controller="Spa" asp-action="Index">Yenilenme</a>
+                            </li>
+                            <li class="nav-item ms-4">
+                                <a class="nav-link" href="#">Konaklama</a>
+                            </li>
+                            <li class="nav-item dropdown ms-4">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-globe"></i>
+                                </a>
+                                <ul class="dropdown-menu" id="languages">
+                                    <li><button onclick="translatePage('tr')" class="dropdown-item text-custom" href="#">TR <span class="fi fi-tr"></span></button></li>
+                                    <li><button onclick="translatePage('en')" class="dropdown-item text-custom">EN <span class="fi fi-sh"></span></button></li>
+                                    <li><button onclick="translatePage('ar')" class="dropdown-item text-custom" href="#">AR <span class="fi fi-sa"></span></button></li>
+                                    <li><button onclick="translatePage('de')" class="dropdown-item text-custom" href="#">GR <span class="fi fi-de"></span></button></li>
+                                    <li><button onclick="translatePage('es')" class="dropdown-item text-custom" href="#">ES <span class="fi fi-es"></span></button></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item ms-4">
+                                <button class="button bg-transparent btn px-4 py-1">Üyelik</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-position container-fluid p-0"
+         data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @if (ViewBag.Images != null)
+            {
+                @foreach (var i in ViewBag.Images)
+                {
+                    <div class="carousel-item active">
+                        <img src="@i" class="d-block img-fluid w-100" alt="...">
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+    <div class="container-fluid p-0">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="container-fluid mt-5">
+        <div class="container p-3 my-5">
+            <div class="row d-flex">
+                <div class="col-sm-12 col-md-3">
+                    <ul>
+                        <li>
+                            <h6 class="text-secondary mb-3">Mola</h6>
+                        </li>
+                        <li><a href="">Hakkımızda</a></li>
+                        <li><a href="">Eğlence</a></li>
+                        <li><a href="">Wellness</a></li>
+                        <li><a href="">Lezzet</a></li>
+                        <li><a href="">Konaklama</a></li>
+                        <li><a href="">Corporate</a></li>
+                        <li><a href="">Mola Kulüp Üyelikleri</a></li>
+                        <li><a href="">AES Uygulaması</a></li>
+                        <li><a href="">Yardım Merkezi</a></li>
+                        <li><a href="">Mola Konsept</a></li>
+                        <li><a href="">Gizlilik Politikası</a></li>
+                        <li><a href="">KVKK Aydınlatma Bildirim</a>i</li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-12 col-md-3">
+                    <ul>
+                        <li>
+                            <h6 class="text-secondary mb-3">Mola</h6>
+                        </li>
+                        <li><a href="">Hakkımızda</a></li>
+                        <li><a href="">Eğlence</a></li>
+                        <li><a href="">Wellness</a></li>
+                        <li><a href="">Lezzet</a></li>
+                        <li><a href="">Konaklama</a></li>
+                        <li><a href="">Corporate</a></li>
+                        <li><a href="">Mola Kulüp Üyelikleri</a></li>
+                        <li><a href="">AES Uygulaması</a></li>
+                        <li><a href="">Yardım Merkezi</a></li>
+                        <li><a href="">Mola Konsept</a></li>
+                        <li><a href="">Gizlilik Politikası</a></li>
+                        <li><a href="">KVKK Aydınlatma Bildirim</a>i</li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-12 col-md-3">
+                    <ul>
+                        <li>
+                            <h6 class="text-secondary mb-3">Mola</h6>
+                        </li>
+                        <li><a href="">Hakkımızda</a></li>
+                        <li><a href="">Eğlence</a></li>
+                        <li><a href="">Wellness</a></li>
+                        <li><a href="">Lezzet</a></li>
+                        <li><a href="">Konaklama</a></li>
+                        <li><a href="">Corporate</a></li>
+                        <li><a href="">Mola Kulüp Üyelikleri</a></li>
+                        <li><a href="">AES Uygulaması</a></li>
+                        <li><a href="">Yardım Merkezi</a></li>
+                        <li><a href="">Mola Konsept</a></li>
+                        <li><a href="">Gizlilik Politikası</a></li>
+                        <li><a href="">KVKK Aydınlatma Bildirim</a>i</li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-12 col-md-3">
+                    <ul class="d-grid gap-2">
+                        <li>
+                            <h6 class="text-secondary mb-3">Mola</h6>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-phone"></i> 444 67 59</a></li>
+                        <li><a href=""><i class="fa-solid fa-user"></i> Sizi Arayalım</a></li>
+                        <li>
+                            <a href="">
+                                <i class="fa-solid fa-location-dot"></i> Mola İstanbul Konum
+                                Ortaköy Mah. Kadıköy Bağları Cad. No:19 Selimpaşa-Silivri/İSTANBUL
+                            </a>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-envelope"></i> nfo@molaistanbul.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-12 d-flex justify-content-between mt-5 p-0">
+                    <svg cursor="pointer" width="160" height="38" format="webp" viewBox="0 0 160 38" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_5227_27962)">
+                            <path d="M47.5448 11.751H49.6483V27.4688H47.3866V15.2378L42.5547 21.3137H42.1373L37.2509 15.2378V27.4688H35V11.751H37.1308L42.3528 18.2062L47.5448 11.751Z"
+                                  fill="#38BDD4"></path>
+                            <path d="M97.031 11.751H99.2819V25.4198H106.359V27.4688H97.031V11.751Z" fill="#38BDD4"></path>
+                            <path d="M116.304 11.6606H117.884L124.931 27.4685H122.628L120.53 22.8085H113.827L111.862 27.4685H109.549L116.304 11.6606ZM119.605 20.806L117.071 15.1147L114.719 20.806H119.605Z"
+                                  fill="#38BDD4"></path>
+                            <path d="M73.7803 0C70.0225 0 66.349 1.11433 63.2245 3.20208C60.0999 5.28982 57.6647 8.25722 56.2266 11.729C54.7885 15.2008 54.4123 19.0211 55.1454 22.7067C55.8785 26.3924 57.6881 29.7778 60.3453 32.435C63.0025 35.0922 66.388 36.9018 70.0736 37.6349C73.7592 38.368 77.5795 37.9918 81.0513 36.5537C84.5231 35.1157 87.4905 32.6804 89.5782 29.5558C91.666 26.4313 92.7803 22.7578 92.7803 19C92.7803 13.9609 90.7785 9.12816 87.2153 5.56497C83.6522 2.00178 78.8194 0 73.7803 0V0ZM73.7803 35.3017C70.5561 35.3017 67.4044 34.3456 64.7236 32.5544C62.0428 30.7631 59.9533 28.2171 58.7195 25.2384C57.4857 22.2596 57.1628 18.9819 57.7919 15.8197C58.4209 12.6575 59.9734 9.7528 62.2533 7.47296C64.5331 5.19313 67.4378 3.64054 70.6 3.01154C73.7622 2.38253 77.04 2.70536 80.0187 3.9392C82.9974 5.17304 85.5434 7.26247 87.3347 9.94326C89.1259 12.6241 90.082 15.7758 90.082 19C90.0813 23.3233 88.3636 27.4692 85.3066 30.5262C82.2495 33.5832 78.1036 35.301 73.7803 35.3017Z"
+                                  fill="#38BDD4"></path>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_5227_27962">
+                                <rect width="90" height="38" fill="white" transform="translate(35)"></rect>
+                            </clipPath>
+                        </defs>
+                    </svg>
+
+                    <div class="d-flex gap-3">
+                        <a href=""><i class="fa-brands fa-facebook-f footericn fs-5"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram footericn fs-5"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin-in footericn fs-5"></i></a>
+                        <a href=""><i class="fa-brands fa-youtube footericn fs-5"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'tr' }, 'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            centeredSlides: true,
+        });
+    </script>
+</body>
+</html>

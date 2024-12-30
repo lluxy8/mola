@@ -1,0 +1,19 @@
+﻿@model List<mola.Models.Restoran>
+
+@{
+    Layout = "_LayoutPanel";
+}
+
+<h2>Restoran Sil</h2>
+
+<form class="d-grid gap-3" asp-action="RestoranSil" method="post">
+    <select name="id" class="form-select" aria-label="Default select example">
+        <option value="0" selected>Restoran Seçiniz.</option>
+        @foreach (var i in Model)
+        {
+            <option value="@i.Id">@i.Baslik</option>
+        }
+    </select>
+    <button type="submit" class="btn btn-danger">Sil</button>
+</form>
+

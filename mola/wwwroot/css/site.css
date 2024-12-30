@@ -1,0 +1,278 @@
+@import url('https://fonts.cdnfonts.com/css/gilroy-bold');
+
+html {
+  font-size: 14px;
+  overflow-x:hidden;
+}
+html, body {
+    height: 100%;
+    top: 0px !important;
+}
+.skiptranslate {
+    display: none !important;
+} 
+main {
+    min-height: calc(100vh - footer-height);
+}
+
+nav {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.603), transparent);
+    list-style: none;
+    z-index: 99;
+}
+
+    nav a {
+        color: white !important;
+    }
+.carousel-position {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.text-custom {
+    color: rgb(6, 25, 55) !important;
+}
+
+.btn {
+    border: white solid 1px;
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+    .btn:hover {
+        border: white solid 1px;
+        color: white;
+    }
+
+.order-box {
+    border-radius: 55px;
+    width: 100%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.171);
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    top: 31rem;
+}
+
+.margin-padding-0 p {
+    margin: 0;
+    padding: 0;
+}
+
+.margin-padding-0 span {
+    margin: 0;
+    padding: 0;
+}
+
+.margin-padding-0 h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.order-box-left-border {
+    border-right: 1px solid rgba(0, 0, 0, 0.116);
+}
+
+.day-btn {
+    border: 1px solid rgba(0, 0, 0, 0.116);
+    border-radius: 3px;
+}
+
+.carousel img {
+    height: 40rem;
+}
+
+.mt-32vw {
+    margin-top: 30vw;
+}
+
+@media (max-width: 1656px) {
+    .order-box {
+        display: none !important;
+    }
+
+    .mt-32vw {
+        margin-top: 40vw;
+    }
+
+    .swiper-wrapper {
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 1378px) {
+    .order-box {
+        display: none !important;
+    }
+
+    .mt-32vw {
+        margin-top: 50vw;
+    }
+
+    .card {
+        width: 12rem !important;
+        height: 10rem !important;
+        font-size: 1rem !important;
+    }
+}
+
+@media (max-width: 1098px) {
+    .order-box {
+        display: none !important;
+    }
+
+    .mt-32vw {
+        margin-top: 60vw;
+    }
+    .roundedx1 {
+        border-radius: 0rem !important;
+    }
+
+    .roundedx2 {
+        border-radius: 0rem!important;
+    }
+}
+
+@media (max-width: 942px) {
+    .order-box {
+        display: none !important;
+    }
+
+    .mt-32vw {
+        margin-top: 70vw;
+    }
+}
+
+@media (max-width: 804px) {
+    body {
+        font-size: 1rem;
+    }
+
+    .order-box {
+        display: none !important;
+    }
+
+    .mt-32vw {
+        margin-top: 50vw;
+    }
+
+    .swiper-wrapper {
+        gap: 2rem;
+    }
+    .carousel-item img{
+        height:26rem;
+    }
+
+
+
+}
+
+@media (max-width: 622px) {
+    .order-box {
+        display: none !important;
+    }
+
+    .mt-32vw {
+        margin-top: 60vw;
+    }
+}
+
+@media (max-width: 508px) {
+    .order-box {
+        display: none !important;
+    }
+
+    .mt-32vw {
+        margin-top: 140vw;
+    }
+}
+
+@media (max-width: 400px) {
+    .order-box {
+        display: none !important;
+    }
+
+    .mt-32vw {
+        margin-top: 100vw;
+    }
+}
+
+.card {
+    border-radius: 2rem;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.299);
+    width: 18rem;
+    height: 14rem;
+}
+
+    .card img {
+        border-radius: 2rem 2rem 0px 0px;
+    }
+
+.btn-pri {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color: #00a9c7;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    text-decoration:none;
+}
+
+video {
+    border-radius: 2rem;
+}
+
+footer {
+    border-top: 3px solid #00a9c7;
+}
+
+    footer a {
+        text-decoration: none;
+        color: rgb(6, 25, 55);
+    }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footericn {
+    background-color: #00a9c7;
+    border-radius: 50%;
+    color: white;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.roundedx1{
+    border-radius:4rem 0rem 0rem 4rem;
+}
+
+.roundedx2 {
+    border-radius: 0rem 4rem 4rem 0rem;
+}
+
+.breadcrumb-item a {
+    text-decoration: none !important;
+    color: rgb(6, 25, 55) !important;
+}
+
+.breadcrumb-item.active{
+    color:rgb(0, 171, 200)!important;
+}
+
+.roundedxl{
+    border-radius:1.5rem;
+}
+
+.lezrez {
+    height:10rem;
+}
+
+ a{
+    text-decoration:none!important;
+}
+

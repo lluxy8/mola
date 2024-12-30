@@ -1,0 +1,15 @@
+﻿@model mola.Models.Restoran
+
+@{
+    Layout = "_LayoutPanel";
+}
+
+<h2>Restoran Ekle</h2>
+
+<form class=" d-grid gap-3" asp-action="RestoranEkle" method="post">
+    <input class="form-control" asp-for="Baslik" type="text" placeholder="Baslik" />
+    <input class="form-control" asp-for="Text1" type="text" placeholder="Text1" />
+    <input class="form-control" asp-for="Text2" type="text" placeholder="Text2" />
+    <input class="form-control" asp-for="AnaResimUrl" type="text" placeholder="AnaResimUrl" />
+    <button class="btn btn-primary">Ekle</button>
+</form>

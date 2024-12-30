@@ -1,0 +1,123 @@
+﻿@model List<mola.Models.Etkinlik>
+@{
+    ViewBag.Images = new List<String>
+    {
+        "images/etkinlik.webp",
+    };
+}
+
+
+<div class="container p-0 mt-32vw">
+    <h2 class="text-custom">Çocuk Aktiviteleri</h2>
+    <div class="swiper mySwiper py-3">
+        <div class="swiper-wrapper d-flex">
+            @foreach (var i in Model)
+            {
+                if (i.Kategori == "Cocuk")
+                {
+                    <a asp-controller="Etkinlik" asp-action="EtkinlikDetay" asp-route-id="@i.Id">
+                        <div class="card" style="width: 18rem; min-height:20rem;">
+                            <img class="card-img-top" src="@i.AnaResimUrl">
+                            <div class="card-body">
+                                <h5 class="card-title">@i.Baslik</h5>
+                                <p class="card-text Text">@i.Text1</p>
+                            </div>
+                        </div>
+                    </a>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div class="container p-0 mt-5">
+    <h2 class="text-custom">Yetişkin Aktiviteleri</h2>
+    <div class="swiper mySwiper py-3">
+        <div class="swiper-wrapper d-flex">
+            @foreach (var i in Model)
+            {
+                if (i.Kategori == "Yetiskin")
+                {
+                    <a asp-controller="Etkinlik" asp-action="EtkinlikDetay" asp-route-id="@i.Id">
+                        <div class="card" style="width: 18rem; min-height:20rem;">
+                            <img class="card-img-top" src="@i.AnaResimUrl">
+                            <div class="card-body">
+                                <h5 class="card-title">@i.Baslik</h5>
+                                <p class="card-text Text">@i.Text1</p>
+                            </div>
+                        </div>
+                    </a>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div class="container p-0 mt-5">
+    <h2 class="text-custom">Genç Aktiviteleri</h2>
+    <div class="swiper mySwiper py-3">
+        <div class="swiper-wrapper d-flex">
+            @foreach (var i in Model)
+            {
+                if (i.Kategori == "Genc")
+                {
+                    <a asp-controller="Etkinlik" asp-action="EtkinlikDetay" asp-route-id="@i.Id">
+                        <div class="card" style="width: 18rem; min-height:20rem;">
+                            <img class="card-img-top" src="@i.AnaResimUrl">
+                            <div class="card-body">
+                                <h5 class="card-title">@i.Baslik</h5>
+                                <p class="card-text Text">@i.Text1</p>
+                            </div>
+                        </div>
+                    </a>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div class="container p-0 mt-5">
+    <h2 class="text-custom">Aile Aktiviteleri</h2>
+    <div class="swiper mySwiper py-3">
+        <div class="swiper-wrapper d-flex">
+            @foreach (var i in Model)
+            {
+                if (i.Kategori == "Aile")
+                {
+                    <a asp-controller="Etkinlik" asp-action="EtkinlikDetay" asp-route-id="@i.Id">
+                        <div class="card" style="width: 18rem; min-height:20rem;">
+                            <img class="card-img-top" src="@i.AnaResimUrl">
+                            <div class="card-body">
+                                <h5 class="card-title">@i.Baslik</h5>
+                                <p class="card-text Text">@i.Text1</p>
+                            </div>
+                        </div>
+                    </a>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.thumbnail').forEach(function (thumbnail) {
+            thumbnail.addEventListener('click', function () {
+                const featuredImage = document.getElementById('featured-image');
+                featuredImage.src = this.src;
+            });
+        });
+
+        const pElements = document.querySelectorAll('.Text');
+        const maxLength = 45;
+
+        pElements.forEach(pElement => {
+            const originalText = pElement.innerText;
+            if (originalText.length > maxLength) {
+                pElement.innerText = originalText.slice(0, maxLength) + '...';
+            }
+        });
+    });
+</script>

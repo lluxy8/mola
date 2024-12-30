@@ -1,0 +1,19 @@
+﻿@model mola.Models.EtkinlikResim
+
+@{
+    Layout = "_LayoutPanel";
+}
+
+<h2>Etkinlik Resim Ekle</h2>
+
+<form class=" d-grid gap-3" asp-action="SpaResimEkle" method="post">
+    <input class="form-control" asp-for="ResimUrl" type="text" placeholder="Resim Url" />
+    <select asp-for="EtkinlikId" class="form-select" aria-label="Default select example">
+        <option value="0" selected>Etkinlik Seçiniz.</option>
+        @foreach (var i in @ViewBag.Restorans)
+        {
+            <option value="@i.Id">@i.Baslik</option>
+        }
+    </select>
+    <button class="btn btn-primary">Ekle</button>
+</form>

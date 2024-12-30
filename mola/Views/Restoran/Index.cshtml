@@ -1,0 +1,29 @@
+﻿@model List<mola.Models.Restoran>
+@{
+    ViewBag.Images = new List<String>
+    {
+        "images/lezzet.webp",
+    };
+}
+<style>
+
+</style>
+<div class="container d-grid gap-5 mt-32vw" >
+    @foreach(var i in Model)
+    {
+        <div class="w-100 h-100" >
+            <div class="row" >
+                <div class="col-md-7 col-sm-12 p-0" >
+                    <img src="@i.AnaResimUrl" alt="Alternate Text" class="roundedx1 img-fluid w-100 h-100"/>
+                </div>
+                <div class="col-md-5 col-sm-12 d-flex flex-column justify-content-center gap-3 shadow roundedx2 bg-light px-5 py-3" >
+                    <h1 class="text-custom">@i.Baslik</h1>
+                    <p class="text-custom">@i.Text1</p>
+
+                    <a class="btn-pri w-25" asp-controller="Restoran" asp-action="RestoranDetay" asp-route-id="@i.Id" style="height:2.5rem;">Detaylı Bilgi</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
